@@ -18,5 +18,4 @@ ___
     - arms
     - carriage
 
-
-![Sketch of gantry robot](/images/IMG_4812.HEIC "Sketch of gantry robot")
+![Sketch of gantry robot](/images/GantrySketch.jpg "Sketch of gantry robot")
