@@ -19,4 +19,4 @@ ___
     - carriage
 
 
-![image][IMG_4812.HEIC]
+![Sketch of gantry robot](IMG_4812.HEIC "Sketch of gantry robot")
