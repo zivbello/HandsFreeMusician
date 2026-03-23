@@ -5,6 +5,18 @@ ___
 ## Mon, Mar 23
 - Changing project idea at professor's request
 - Gesture control will now control an xy gantry robot that plays a song on stylophone on loop
-- Materials needed to purchase
+- Materials to purchase
     - Two stepper motors
-    - Gears and chain
+    - Chain
+    - Axles
+- Materials to 3D print
+    - gears (fit to chain)
+    - rack and pinion gears
+    - holder for stylus
+    - feet for gantry
+- Materials to machine
+    - arms
+    - carriage
+
+
+![image][IMG_4812.HEIC]
