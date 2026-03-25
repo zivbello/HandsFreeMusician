@@ -23,5 +23,9 @@ ___
 ## Wed, Mar 25 (12:25 - 3:25)
 - Obtained materials for gantry arms and carriage
 - Measured stylophone 6 1/4 inches x 3 3/4 inches
+- Measure stylus 6mm x 6mm
 - Using pytorch instead of mediapipe
 - Researching gesture recognition in pytorch
+- Using Real-time-GesRec with EgoGesture dataset
+- Redesign stylus lifting mechanism, no more rack-and-pinion
+- Modeled stylus holder
