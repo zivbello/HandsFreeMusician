@@ -34,3 +34,4 @@ ___
 - Redesigned CAD model for pen holder
 - Researched alternative solutions for APIs
 - Found this: https://github.com/RAJADURAI3/Real-Time-Multi-Person-Pose-Based-Action-Recognition-System/blob/main/README.md
+- and this hand gesture git: https://github.com/SegwayWarrior/Gesture_Recognition_opencv_yolov5/tree/master
