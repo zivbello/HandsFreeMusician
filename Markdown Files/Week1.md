@@ -29,3 +29,8 @@ ___
 - Using Real-time-GesRec with EgoGesture dataset
 - Redesign stylus lifting mechanism, no more rack-and-pinion
 - Modeled stylus holder
+
+## Fri, Mar 27 (10:25 - 11:30)
+- Redesigned CAD model for pen holder
+- Researched alternative solutions for APIs
+- Found this: https://github.com/RAJADURAI3/Real-Time-Multi-Person-Pose-Based-Action-Recognition-System/blob/main/README.md
