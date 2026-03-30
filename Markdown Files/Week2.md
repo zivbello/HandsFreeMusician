@@ -7,3 +7,4 @@ ___
 - Tried to install the computer vision algorithms we found into a virtual environment but they both were too large
 - The second algorithm was built for ASL interpreting rather than general hand gestures, so we will not use that one
 - Researching more algorithms to work with
+- found this hand gesture database: https://www.kaggle.com/datasets/gti-upm/leapgestrecog/data
