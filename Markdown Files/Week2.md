@@ -13,3 +13,5 @@ ___
 - Also found this model: https://github.com/fabiopk/RT_GestureRecognition
 - Modeled several potential gears for the chain
 - Got mediapipe working on a laptop, will need to train for more gestures or find another model that uses mediapipe
+- Will work on refining gesture recognition and implement communication with Arduino
+- Will figure out (if possible) how to get code running on R-Pi
