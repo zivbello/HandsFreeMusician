@@ -11,3 +11,4 @@ ___
 - Found deep-learning gesture recognition model: https://github.com/guillaumephd/deep_learning_hand_gesture_recognition?tab=readme-ov-file
 - Considering running models on our own laptops to avoid issues with installing mediapipe on R-Pi
 - Also found this model: https://github.com/fabiopk/RT_GestureRecognition
+- Modeled several potential gears for the chain
