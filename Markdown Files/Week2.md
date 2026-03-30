@@ -1,6 +1,9 @@
-# Week 1
+# Week 2
 Group 8 Members: Ziven Bello, Kimberly Talisse, Leon Chen
 ___
 
 ## Mon, Mar 30 (12:30 - 3:30)
 - Redesigned pen holder to better fit the stylus and have a longer arm
+- Tried to install the computer vision algorithms we found into a virtual environment but they both were too large
+- The second algorithm was built for ASL interpreting rather than general hand gestures, so we will not use that one
+- Researching more algorithms to work with
