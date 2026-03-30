@@ -12,3 +12,4 @@ ___
 - Considering running models on our own laptops to avoid issues with installing mediapipe on R-Pi
 - Also found this model: https://github.com/fabiopk/RT_GestureRecognition
 - Modeled several potential gears for the chain
+- Got mediapipe working on a laptop, will need to train for more gestures or find another model that uses mediapipe
