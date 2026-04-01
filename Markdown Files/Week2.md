@@ -16,3 +16,8 @@ ___
 - Will work on refining gesture recognition and implement communication with Arduino
 - Will figure out (if possible) how to get code running on R-Pi
 - Got a thumb drive to help with prototyping 3d printed parts
+
+## Mon, Apr 1 (12:30 - 3:30)
+- Changed the hand gesture to: Thumbs Up → BPM +10, Thumbs Down → BPM -10, Fist → Stop, Peace → Resume
+- Used Mediapipe on a personal computer and got the gesture and camera working
+- Copied gesture code and model file to Raspberry Pi, gesture recognition running live on Raspberry Pi camera now
