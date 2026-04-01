@@ -26,7 +26,7 @@ ___
 - Measure stylus 6mm x 6mm
 - Using pytorch instead of mediapipe
 - Researching gesture recognition in pytorch
-- Using Real-time-GesRec with EgoGesture dataset
+- Using Real-time-GesRec with EgoGesture dataset: https://github.com/ahmetgunduz/Real-time-GesRec and http://www.nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html
 - Redesign stylus lifting mechanism, no more rack-and-pinion
 - Modeled stylus holder
 
