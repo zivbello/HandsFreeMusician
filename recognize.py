@@ -25,8 +25,6 @@ last_static   = None
 static_start  = 0.0
 swipe_start_x = None
 swipe_start_t = 0.0
-prev_angle    = None
-rotation_acc  = 0.0
 
 def send(cmd):
     print(f"[CMD] {cmd}")
@@ -65,26 +63,6 @@ def get_command(gesture_name, wrist_x, wrist_angle, now):
                 swipe_start_t = now
     else:
         swipe_start_x = None
-
-    # ── Wrist rotation ─────────────────────────────────────
-    global prev_angle, rotation_acc
-    if prev_angle is not None:
-        diff = wrist_angle - prev_angle
-        if diff > 180:  diff -= 360
-        if diff < -180: diff += 360
-        rotation_acc += diff
-        if cooldown_ok:
-            if rotation_acc > 45:
-                send("BPM:+10")
-                last_trigger = now
-                rotation_acc = 0.0
-                return "Wrist CW → BPM UP"
-            elif rotation_acc < -45:
-                send("BPM:-10")
-                last_trigger = now
-                rotation_acc = 0.0
-                return "Wrist CCW → BPM DOWN"
-    prev_angle = wrist_angle
 
     # ── Static gestures (hold to trigger) ─────────────────
     static = None
