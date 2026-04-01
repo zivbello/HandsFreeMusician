@@ -30,8 +30,12 @@ ___
 - Redesign stylus lifting mechanism, no more rack-and-pinion
 - Modeled stylus holder
 
+![3D Model of penholder prototype](/images/prototypeholder1.png "3D Model of penholder prototype")
+
 ## Fri, Mar 27 (10:25 - 11:30)
 - Redesigned CAD model for pen holder
 - Researched alternative solutions for APIs
 - Found this: https://github.com/RAJADURAI3/Real-Time-Multi-Person-Pose-Based-Action-Recognition-System/blob/main/README.md
 - and this hand gesture git: https://github.com/SegwayWarrior/Gesture_Recognition_opencv_yolov5/tree/master
+
+![3D Model of penholder prototype](/images/prototypeholder2.png "3D Model of penholder prototype")
