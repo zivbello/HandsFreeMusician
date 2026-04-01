@@ -21,3 +21,9 @@ ___
 - Changed the hand gesture to: Thumbs Up → BPM +10, Thumbs Down → BPM -10, Fist → Stop, Peace → Resume
 - Used Mediapipe on a personal computer and got the gesture and camera working
 - Copied gesture code and model file to Raspberry Pi, gesture recognition running live on Raspberry Pi camera now
+- Printed out prototype parts in preparation for arrival of ordered parts
+- Programmed the Arduino for testing gesture control
+- Got the Pi to communicate with the Arduino
+- Attached servo to Arduino to test stylus holder
+- Need new servo as the lab ones are far too weak and overheat easily
+- Ordered new servo
