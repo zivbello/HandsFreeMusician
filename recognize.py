@@ -30,9 +30,9 @@ def send(cmd):
     print(f"[CMD] {cmd}")
     ser.write((cmd + "\n").encode())
 
-def get_command(gesture_name, wrist_x, wrist_angle, now):
+def get_command(gesture_name, wrist_x, now):
     global last_trigger, last_static, static_start
-    global swipe_start_x, swipe_start_t, prev_angle, rotation_acc, bpm
+    global swipe_start_x, swipe_start_t, bpm
 
     cooldown_ok = (now - last_trigger) >= COOLDOWN
 
@@ -158,16 +158,10 @@ def run(model, num_hands, min_det, min_presence, min_track, camera_id, width, he
 
             # Wrist position + angle
             wrist_x = lm_list[0].x
-            angle   = math.degrees(math.atan2(
-                lm_list[0].y - lm_list[9].y,
-                lm_list[9].x - lm_list[0].x
-            ))
 
-            label = get_command(gesture_name, wrist_x, angle, now)
+            label = get_command(gesture_name, wrist_x, now)
         else:
             global prev_angle, rotation_acc, swipe_start_x
-            prev_angle    = None
-            rotation_acc  = 0.0
             swipe_start_x = None
 
         cv2.putText(frame, label, (20, 40),
