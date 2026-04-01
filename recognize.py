@@ -6,11 +6,19 @@ import mediapipe as mp
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 from mediapipe.framework.formats import landmark_pb2
+import serial
+
+# ── Serial to Arduino ──────────────────────────────────────────
+ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
+time.sleep(2)  # wait for Arduino to reset
 
 # ── Gesture cooldown / hold state ─────────────────────────────
 COOLDOWN     = 0.8
 HOLD         = 0.4
 SWIPE_THRESH = 0.25
+BPM_MIN      = 60
+BPM_MAX      = 180
+bpm          = 120
 
 last_trigger  = 0.0
 last_static   = None
@@ -21,12 +29,12 @@ prev_angle    = None
 rotation_acc  = 0.0
 
 def send(cmd):
-    # Swap this print for ser.write(bytes([CMD])) on the Pi
     print(f"[CMD] {cmd}")
+    ser.write((cmd + "\n").encode())
 
 def get_command(gesture_name, wrist_x, wrist_angle, now):
     global last_trigger, last_static, static_start
-    global swipe_start_x, swipe_start_t, prev_angle, rotation_acc
+    global swipe_start_x, swipe_start_t, prev_angle, rotation_acc, bpm
 
     cooldown_ok = (now - last_trigger) >= COOLDOWN
 
@@ -98,13 +106,21 @@ def get_command(gesture_name, wrist_x, wrist_angle, now):
                         last_trigger = now
                         return "Fist → STOP"
                     case "thumb_up":
-                        send("BPM:+10")
-                        last_trigger = now
-                        return "Thumbs Up → BPM UP"
+                        if bpm + 10 <= BPM_MAX:
+                            bpm += 10
+                            send(f"BPM:+10")
+                            last_trigger = now
+                            return f"Thumbs Up → BPM UP ({bpm})"
+                        else:
+                            return f"BPM MAX ({BPM_MAX})"
                     case "thumb_down":
-                        send("BPM:-10")
-                        last_trigger = now
-                        return "Thumbs Down → BPM DOWN"
+                        if bpm - 10 >= BPM_MIN:
+                            bpm -= 10
+                            send(f"BPM:-10")
+                            last_trigger = now
+                            return f"Thumbs Down → BPM DOWN ({bpm})"
+                        else:
+                            return f"BPM MIN ({BPM_MIN})"
                     case "peace":
                         send("RESUME")
                         last_trigger = now
