@@ -319,5 +319,16 @@ if __name__ == '__main__':
 ```
 
 ## Fri, Apr 3 (10:25 - 11:25)
+- Researched gear designing
 - Found website for generating sprocket gears https://meta-matic.com/en/api/generate-sprocket/
 - Found website for converting .step/.stp into .stl files
+
+## Fri, Apr 3 (12:25 - 3:35)
+- Printed out sprockets
+- Modeled prototype casing for stepper motors
+- Printed out prototype casing
+- Researched gantry designs
+
+![3D Model of Sprocket](/images/sprocketroundbore.jpg "3D Model of Sprocket with Round Bore")
+![3D Model of Sprocket](/images/sprocketsquarebore.jpg "3D Model of Sprocket with Square Bore")
+![3D Model of Casing](/images/steppermotorcasing.jpg "3D Model of Prototype Stepper Motor Casing")
