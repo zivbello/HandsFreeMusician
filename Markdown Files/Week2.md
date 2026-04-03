@@ -317,3 +317,7 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+## Fri, Apr 3 (10:25 - 11:25)
+- Found website for generating sprocket gears https://meta-matic.com/en/api/generate-sprocket/
+- Found website for converting .step/.stp into .stl files
