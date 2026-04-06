@@ -319,6 +319,7 @@ if __name__ == '__main__':
 ```
 
 ## Fri, Apr 3 (10:25 - 11:25)
+- Reviewed the overall project plan and inspect the parts that just arrived
 - Researched gear designing
 - Found website for generating sprocket gears https://meta-matic.com/en/api/generate-sprocket/
 - Found website for converting .step/.stp into .stl files
