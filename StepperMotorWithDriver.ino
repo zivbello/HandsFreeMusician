@@ -19,20 +19,20 @@
 //
 // MS1, MS2, MS3 all LOW = full step (200 steps/rev)
 // ──────────────────────────────────────────────────────────────
-#include <Stepper.h>
+//#include <Stepper.h>
 
 #define STEP_PIN  2
 #define DIR_PIN   3
 #define SLP_PIN   4
 #define RST_PIN   5
 
-#define STEPS 100
+//#define STEPS 100
 
 const int   STEPS_PER_REV = 200;   // full step; multiply by microstep factor if MS pins set
 const int   BPM_MIN       = 10;
-const int   BPM_MAX       = 200;
+const int   BPM_MAX       = 300;
 
-Stepper stepper(STEPS, 2, 3, 4, 5);
+//Stepper stepper(STEPS, 2, 3, 4, 5);
 
 int  bpm          = 60;
 bool running      = false;
@@ -68,20 +68,6 @@ void handleCommand(const String& cmd) {
     running = true;
     wake();
     Serial.println("[INFO] RESUME");
-
-  } else if (cmd == "NEXT") {
-    wake();
-    moveStepsLeft = STEPS_PER_REV;
-    moveDir       = 1;
-    digitalWrite(DIR_PIN, HIGH);
-    Serial.println("[INFO] NEXT – 1 rev CW");
-
-  } else if (cmd == "PREV") {
-    wake();
-    moveStepsLeft = STEPS_PER_REV;
-    moveDir       = -1;
-    digitalWrite(DIR_PIN, LOW);
-    Serial.println("[INFO] PREV – 1 rev CCW");
 
   } else if (cmd.startsWith("BPM:+")) {
     bpm = constrain(bpm + cmd.substring(5).toInt(), BPM_MIN, BPM_MAX);
@@ -132,9 +118,10 @@ void loop() {
 
   // Non-blocking step timing
   unsigned long now = micros();
-  if (now - lastStepTime >= stepInterval / 2) {
+  //if (now - lastStepTime >= stepInterval / 2) {
+    if (now - lastStepTime >= stepInterval) {
     lastStepTime = now;
-
+/*
     if (moveStepsLeft > 0) {
       // Fixed move (NEXT / PREV) takes priority
       stepState = !stepState;
@@ -152,5 +139,12 @@ void loop() {
       stepState = !stepState;
       digitalWrite(STEP_PIN, stepState);
     }
+    */
+      if (running) {
+        // Continuous rotation
+        digitalWrite(STEP_PIN, HIGH);
+        delayMicroseconds(5);
+        digitalWrite(STEP_PIN, LOW);
+      }
   }
 }
