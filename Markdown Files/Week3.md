@@ -16,5 +16,6 @@ ___
 
 ## Wed, Apr 8 (12:30 - 3:30)
 - Sprocket design was successful, grabs chain easily and fits onto stepper motor
-- Remodeled stepper motor casing
+- Remodeled stepper motor casing slightly to allow the motors to better fit inside the casing, otherwise design is exactly the same
 - Received driver for stepper motors
+- Set up wiring for stepper motors
