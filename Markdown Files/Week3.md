@@ -19,3 +19,5 @@ ___
 - Remodeled stepper motor casing slightly to allow the motors to better fit inside the casing, otherwise design is exactly the same
 - Received driver for stepper motors
 - Set up wiring for stepper motors
+- Continued debugging recognize.py on the Raspberry Pi, troubleshooting issues with the serial connection between the Pi and the Arduino
+- Cleaning up the 3D printed parts, removing support material, stringing, and debris
