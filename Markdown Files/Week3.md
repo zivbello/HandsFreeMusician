@@ -21,3 +21,4 @@ ___
 - Set up wiring for stepper motors
 - Continued debugging recognize.py on the Raspberry Pi, troubleshooting issues with the serial connection between the Pi and the Arduino
 - Cleaning up the 3D printed parts, removing support material, stringing, and debris
+- Debugging Arduino code, stepper motors behave unpredicatably
