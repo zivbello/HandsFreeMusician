@@ -22,4 +22,10 @@ ___
 - Continued debugging recognize.py on the Raspberry Pi, troubleshooting issues with the serial connection between the Pi and the Arduino
 - Cleaning up the 3D printed parts, removing support material, stringing, and debris
 - Debugging Arduino code, stepper motors behave unpredicatably
+
 ![Circuit Wiring](/images/IMG_4510.jpeg)
+
+## Fri, Apr 10 (10:30 - 11:30)
+- More stepper motor troubleshooting
+- Revised thinking on stepper motor speed, just going for smooth rotation for rather than controlling based on BPM
+- Modeled a square bore version of current sprocket design
