@@ -33,3 +33,4 @@ ___
 - Modeled smaller versions of current gear design to help keep chain taut while moving
 
 ![Circuit Wiring](/images/IMG_4516.jpeg)
+![Small Sprocket](/images/small_sprocket.jpg)
