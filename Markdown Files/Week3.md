@@ -29,3 +29,4 @@ ___
 - More stepper motor troubleshooting
 - Revised thinking on stepper motor speed, just going for smooth rotation for rather than controlling based on BPM
 - Modeled a square bore version of current sprocket design
+- Rewired circuit and updated Arduino code to make motor spin properly instead of it just vibrating or not moving at all
