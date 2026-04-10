@@ -30,5 +30,6 @@ ___
 - Revised thinking on stepper motor speed, just going for smooth rotation for rather than controlling based on BPM
 - Modeled a square bore version of current sprocket design
 - Rewired circuit and updated Arduino code to make motor spin properly instead of it just vibrating or not moving at all
+- Modeled smaller versions of current gear design to help keep chain taut while moving
 
 ![Circuit Wiring](/images/IMG_4516.jpeg)
