@@ -34,3 +34,4 @@ ___
 
 ![Circuit Wiring](/images/IMG_4516.jpeg)
 ![Small Sprocket](/images/small_sprocket.jpg)
+![Design Draft](/images/"design draft".png)
