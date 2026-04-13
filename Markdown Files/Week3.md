@@ -34,4 +34,5 @@ ___
 
 ![Circuit Wiring](/images/IMG_4516.jpeg)
 ![Small Sprocket](/images/small_sprocket.jpg)
+- drew a rough draft of our planned final design 
 ![Design Draft](/images/design%20draft.png)
