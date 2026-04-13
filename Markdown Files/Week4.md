@@ -13,3 +13,5 @@ ___
 - Figured out a solution for attaching the electronics to the gantry
     - Using double-sided tape or similar adhesive to attach breadboard to back of gantry arm
 - Tested the new servo motor
+
+![Stepper Motor Casing](/images/Servo_Motor_Casing.jpg)
