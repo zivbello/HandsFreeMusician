@@ -23,5 +23,8 @@ ___
 - Printed servo motor casing
 - Remodeled servo motor casing: just scaled design up
 - Modeled new stylus holder for servo to account for height
+- Decided to change project direction
+    - Now controlling the instrument directly rather than controlling preprogrammed songs
+- Updated python and Arduino code to account for change in project idea
 
 ![Stylus Holder](/images/StylusHolder.jpg)
