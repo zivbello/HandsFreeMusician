@@ -36,34 +36,6 @@ def get_command(gesture_name, wrist_x, now):
 
     cooldown_ok = (now - last_trigger) >= COOLDOWN
 
-    # ── Swipe (track wrist x, only when no static gesture) ─
-    global swipe_start_x, swipe_start_t
-    STATIC_GESTURES = ("Closed_Fist", "Thumb_Up", "Thumb_Down", "Pointing_Up")
-    is_static = gesture_name in STATIC_GESTURES
-    if not is_static:
-        if swipe_start_x is None:
-            swipe_start_x = wrist_x
-            swipe_start_t = now
-        else:
-            delta   = wrist_x - swipe_start_x
-            elapsed = now - swipe_start_t
-            if elapsed < 0.8 and cooldown_ok:
-                if delta > SWIPE_THRESH:
-                    send("NEXT")
-                    last_trigger  = now
-                    swipe_start_x = None
-                    return "Swipe Right → NEXT"
-                elif delta < -SWIPE_THRESH:
-                    send("PREV")
-                    last_trigger  = now
-                    swipe_start_x = None
-                    return "Swipe Left → PREV"
-            elif elapsed >= 0.8:
-                swipe_start_x = wrist_x
-                swipe_start_t = now
-    else:
-        swipe_start_x = None
-
     # ── Static gestures (hold to trigger) ─────────────────
     static = None
     if gesture_name == "Closed_Fist":
