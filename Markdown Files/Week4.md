@@ -15,3 +15,10 @@ ___
 - Tested the new servo motor
 
 ![Stepper Motor Casing](/images/Servo_Motor_Casing.jpg)
+
+## Wed, Apr 15 (12:35 - 3:35)
+- Marked out connection points between main gantry arm and support arms
+- Discussed plans for project poster
+- Attached motor casings to support arms
+- Printed servo motor casing
+- Remodeled servo motor casing: just scaled design up
