@@ -84,21 +84,13 @@ def get_command(gesture_name, wrist_x, now):
                         last_trigger = now
                         return "Fist → STOP"
                     case "thumb_up":
-                        if bpm + 10 <= BPM_MAX:
-                            bpm += 10
-                            send(f"BPM:+10")
-                            last_trigger = now
-                            return f"Thumbs Up → BPM UP ({bpm})"
-                        else:
-                            return f"BPM MAX ({BPM_MAX})"
+                        send("LEFT")
+                        last_trigger = now
+                        return "Thumbs Up → LEFT"
                     case "thumb_down":
-                        if bpm - 10 >= BPM_MIN:
-                            bpm -= 10
-                            send(f"BPM:-10")
-                            last_trigger = now
-                            return f"Thumbs Down → BPM DOWN ({bpm})"
-                        else:
-                            return f"BPM MIN ({BPM_MIN})"
+                        send("RIGHT")
+                        last_trigger = now
+                        return "Thumbs Down → RIGHT"
                     case "peace":
                         send("RESUME")
                         last_trigger = now
