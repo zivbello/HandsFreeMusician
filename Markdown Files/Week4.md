@@ -22,3 +22,6 @@ ___
 - Attached motor casings to support arms
 - Printed servo motor casing
 - Remodeled servo motor casing: just scaled design up
+- Modeled new stylus holder for servo to account for height
+
+![Stylus Holder](/images/StylusHolder.jpg)
