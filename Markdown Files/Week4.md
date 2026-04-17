@@ -31,6 +31,11 @@ ___
 
 ## Fri, Apr 17 (10:25 - 11:25)
 - Began bolting together gantry arms
-- Troubleshooted stepper motors
-- Troubleshooted Arduino code
+- Troubleshooted Arduino code for stepper motors
 - Tested new pen holder and servo casing
+
+## Fri, Apr 17 (12:40 - 3:40)
+- Found issue with right motor casing connection
+    - Super glue wore off, casing rotates resulting in chain being less taut
+- Finished bolting together gantry arms
+- Continued troubleshooting stepper motor code
