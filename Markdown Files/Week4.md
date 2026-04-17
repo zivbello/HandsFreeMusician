@@ -28,3 +28,9 @@ ___
 - Updated python and Arduino code to account for change in project idea
 
 ![Stylus Holder](/images/StylusHolder.jpg)
+
+## Fri, Apr 17 (10:25 - 11:25)
+- Began bolting together gantry arms
+- Troubleshooted stepper motors
+- Troubleshooted Arduino code
+- Tested new pen holder and servo casing
