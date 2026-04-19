@@ -39,3 +39,11 @@ ___
     - Super glue wore off, casing rotates resulting in chain being less taut
 - Finished bolting together gantry arms
 - Continued troubleshooting stepper motor code
+
+## Sun Apr 19 (2:10 - 4:45)
+- More troubleshooting stepper motors
+- Got stepper motors working
+- Secured gantry carriage to chain
+- Secured servo to gantry carriage
+- Secured loose stepper motor casing
+- Updated Arduino code and python code to allow for note by note control
