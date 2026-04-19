@@ -7,9 +7,7 @@
 class StepperMotor {
   public:
     AccelStepper stepper;
-
     long stepsPerRev;
-    bool moving = false;
 
     StepperMotor(int stepPin, int dirPin, long stepsPerRev)
       : stepper(AccelStepper::DRIVER, stepPin, dirPin),
@@ -26,26 +24,26 @@ class StepperMotor {
 
     void moveDegrees(float deg) {
       stepper.move(degreesToSteps(deg));
-      moving = true;
     }
 
     void moveDegreesRelative(float deg) {
       stepper.move(degreesToSteps(deg));
-      moving = true;
     }
 
     void stop() {
-      stepper.stop();   // decelerates smoothly
-      moving = false;
+      stepper.stop(); // smooth deceleration
+    }
+
+    void emergencyStop() {
+      stepper.setCurrentPosition(stepper.currentPosition());
     }
 
     void update() {
       stepper.run();
+    }
 
-      if (moving && stepper.distanceToGo() == 0) {
-        moving = false;
-        Serial.println("[INFO] Move complete");
-      }
+    bool isMoving() {
+      return stepper.distanceToGo() != 0;
     }
 };
 
@@ -69,11 +67,12 @@ Servo myservo;
 String inputBuffer = "";
 
 // ─────────────────────────────
-// Command handler
+// HIGH-LEVEL COMMAND HANDLER
 // ─────────────────────────────
 void handleCommand(String cmd) {
   cmd.trim();
 
+  // ── STOP ──
   if (cmd == "STOP") {
     motor.stop();
 
@@ -83,6 +82,7 @@ void handleCommand(String cmd) {
     Serial.println("[INFO] STOP");
   }
 
+  // ── RESUME ──
   else if (cmd == "RESUME") {
     digitalWrite(SLP_PIN, HIGH);
     myservo.write(90);
@@ -90,6 +90,7 @@ void handleCommand(String cmd) {
     Serial.println("[INFO] RESUME");
   }
 
+  // ── RIGHT ──
   else if (cmd.startsWith("RIGHT")) {
     float deg = cmd.substring(6).toFloat();
     motor.moveDegrees(deg);
@@ -98,6 +99,7 @@ void handleCommand(String cmd) {
     Serial.println(deg);
   }
 
+  // ── LEFT ──
   else if (cmd.startsWith("LEFT")) {
     float deg = cmd.substring(5).toFloat();
     motor.moveDegrees(-deg);
@@ -113,7 +115,7 @@ void handleCommand(String cmd) {
 }
 
 // ─────────────────────────────
-// Setup
+// SETUP
 // ─────────────────────────────
 void setup() {
   pinMode(SLP_PIN, OUTPUT);
@@ -131,11 +133,11 @@ void setup() {
 }
 
 // ─────────────────────────────
-// Loop
+// LOOP
 // ─────────────────────────────
 void loop() {
 
-  // Serial input
+  // ── Serial Input ──
   while (Serial.available()) {
     char c = Serial.read();
 
@@ -152,6 +154,11 @@ void loop() {
     }
   }
 
-  // Stepper update (non-blocking)
+  // ── Motor update (non-blocking) ──
   motor.update();
+
+  // ── Optional: auto-log completion ──
+  if (!motor.isMoving()) {
+    // you could use this for state logic if needed
+  }
 }
