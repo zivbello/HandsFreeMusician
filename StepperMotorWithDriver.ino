@@ -59,7 +59,7 @@ void handleCommand(const String& cmd) {
   if (cmd == "STOP") {
     running = false;
     myservo.write(45);
-    sleep();
+    // sleep();
     Serial.println("[INFO] STOP");
 
   } else if (cmd == "RESUME") {
@@ -99,6 +99,7 @@ void setup() {
 
   // added servo now
   myservo.attach(9);
+  myservo.write(45);
 
   digitalWrite(RST_PIN, HIGH);
   digitalWrite(DIR_PIN, HIGH);
