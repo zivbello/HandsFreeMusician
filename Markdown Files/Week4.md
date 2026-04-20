@@ -39,3 +39,7 @@ ___
     - Super glue wore off, casing rotates resulting in chain being less taut
 - Finished bolting together gantry arms
 - Continued troubleshooting stepper motor code
+
+## Sun, Apr 19 (2:10 - 4:10)
+- Continued to troubleshoot stepper motor code
+- Bought and applied new super glue to secure motor casingsq
