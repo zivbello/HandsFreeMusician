@@ -56,11 +56,11 @@ def get_command(gesture_name, wrist_x, now):
                         last_trigger = now
                         return "Fist → STOP"
                     case "thumb_up":
-                        send("LEFT 27")
+                        send("LEFT 23")
                         last_trigger = now
                         return "Thumbs Up → LEFT"
                     case "thumb_down":
-                        send("RIGHT 27")
+                        send("RIGHT 23")
                         last_trigger = now
                         return "Thumbs Down → RIGHT"
                     case "peace":
