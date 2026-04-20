@@ -66,6 +66,8 @@ Servo myservo;
 // ─────────────────────────────
 String inputBuffer = "";
 
+bool playing = false;
+
 // ─────────────────────────────
 // HIGH-LEVEL COMMAND HANDLER
 // ─────────────────────────────
@@ -79,6 +81,8 @@ void handleCommand(String cmd) {
     myservo.write(45);
     digitalWrite(SLP_PIN, LOW);
 
+    playing = false;
+
     Serial.println("[INFO] STOP");
   }
 
@@ -87,23 +91,33 @@ void handleCommand(String cmd) {
     digitalWrite(SLP_PIN, HIGH);
     myservo.write(90);
 
+    playing = true;
+    
     Serial.println("[INFO] RESUME");
   }
 
   // ── RIGHT ──
   else if (cmd.startsWith("RIGHT")) {
+    if (!playing) { digitalWrite(SLP_PIN,HIGH); }
+    
     float deg = cmd.substring(6).toFloat();
     motor.moveDegrees(deg);
 
+    if (!playing) { motor.stop() }
+    
     Serial.print("[INFO] RIGHT ");
     Serial.println(deg);
   }
 
   // ── LEFT ──
   else if (cmd.startsWith("LEFT")) {
+    if (!playing) { digitalWrite(SLP_PIN,HIGH); }
+    
     float deg = cmd.substring(5).toFloat();
     motor.moveDegrees(-deg);
 
+    if (!playing) { motor.stop() }
+    
     Serial.print("[INFO] LEFT ");
     Serial.println(deg);
   }
@@ -125,6 +139,7 @@ void setup() {
   digitalWrite(RST_PIN, HIGH);
 
   myservo.attach(9);
+  myservo.write(45);
 
   Serial.begin(9600);
   Serial.println("[INFO] StylBot ready");
