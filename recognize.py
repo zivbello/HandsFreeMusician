@@ -130,7 +130,7 @@ def run(model, num_hands, min_det, min_presence, min_track, camera_id, width, he
 
         cv2.putText(frame, label, (20, 40),
                     cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 255, 180), 2)
-        cv2.imshow("StylBot Gesture", frame)
+        cv2.imshow("HandsFreeMusician", frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
