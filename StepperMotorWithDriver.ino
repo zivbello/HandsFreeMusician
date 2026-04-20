@@ -1,3 +1,4 @@
+
 // ── StylBot Arduino – StepStick (A4988/DRV8825) Controller ───
 // Receives commands from Raspberry Pi over USB Serial (9600 baud)
 //
@@ -77,16 +78,6 @@ void handleCommand(const String& cmd) {
       //digitalWrite(DIR_PIN, HIGH);
       Serial.print("[INFO] LEFT");
 
-      if (stepPos > STEP_MIN) {
-      wake();
-      stepOnce(false);
-      stepPos--;
-      sleep();
-      Serial.print("[INFO] LEFT pos="); Serial.println(stepPos);
-    } else {
-      Serial.println("[INFO] LEFT LIMIT hit");
-    }
-
   } else if (cmd.startsWith("RIGHT")) {
     //make half step cw
       //for (int i = 0; i < STEPS_PER_REV; i++) {
@@ -141,9 +132,9 @@ void loop() {
       lastStepTime = now;
       stepOnce(true);
       
-      digitalWrite(STEP_PIN, HIGH);
-      delayMicroseconds(5);
-      digitalWrite(STEP_PIN, LOW);
+      //digitalWrite(STEP_PIN, HIGH);
+      //delayMicroseconds(5);
+      //digitalWrite(STEP_PIN, LOW);
     }
   }
 }
